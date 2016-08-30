@@ -6,11 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u1 = User.create(username: 'IvanUsername', first_name: 'Ivan', last_name: 'Ayala', phone_number: '3478852636', address: '3437 Weidner ave. Oceanside, NY 11572', email: 'Ivan@gmail.com')
-u2 = User.create(username: 'NateUsername', first_name: 'Nate', last_name: 'Smith', phone_number: '3478852637', address: '3437 Weidner ave. Oceanside, NY 11572', email: 'nate@gmail.com')
-u3 = User.create(username: 'AustinUsername', first_name: 'Austin', last_name: 'Hudson', phone_number: '3478852638', address: '3437 Weidner ave. Oceanside, NY 11572', email: 'austin@gmail.com')
+u1 = User.create(username: 'IvanUsername', password: 'pass123', firstname: 'Ivan FN', lastname: 'Ivam LN', phone: '3478852637', email: 'ivan@ivan.com', address: '3437 Seidner ave.', city: 'Brooklyn', state: 'NY', zipcode: '11229')
+u2 = User.create(username: 'EthanUsername', password: 'pass1234', firstname: 'Ethan FN', lastname: 'Ethan LN', phone: '3478852638', email: 'Ethan@Ethan.com', address: '3437 Feidner ave.', city: 'Brooklyn', state: 'NY', zipcode: '11230')
+u3 = User.create(username: 'LizaUsername', password: 'pass12345', firstname: 'Liza FN', lastname: 'Liza LN', phone: '3478852638', email: 'Liza@Liza.com', address: '3437 Keidner ave.', city: 'Brooklyn', state: 'NY', zipcode: '11223')
 
 
-f1 = Favorite.create(name: 'Taco', restaurant: "some place", phone_number: '3478852662', address: ' an address of the place', price: 5, user_id:1)
-f2 = Favorite.create(name: 'Pizza', restaurant: "another one", phone_number: '3478852662', address: ' an address of the place', price: 6, user_id:2)
-f3 = Favorite.create(name: 'Burger', restaurant: "your mommas house", phone_number: '3478852662', address: ' an address of the place', price: 10, user_id:3)
+f1 = Favorite.create(name: 'Taco', restaurant: "some place", phone: '3478852662', address: ' an address of the place', price: 5, user_id:1)
+f2 = Favorite.create(name: 'Pizza', restaurant: "another one", phone: '3478852662', address: ' an address of the place', price: 6, user_id:2)
+f3 = Favorite.create(name: 'Burger', restaurant: "your mommas house", phone: '3478852662', address: ' an address of the place', price: 10, user_id:3)
+
+
+u1.favorites.push(f1, f2)
+u2.favorites.push(f3)

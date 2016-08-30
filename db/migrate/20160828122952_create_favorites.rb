@@ -3,7 +3,7 @@ class CreateFavorites < ActiveRecord::Migration[5.0]
     create_table :favorites do |t|
       t.string  :name
       t.string  :restaurant
-      t.string  :phone_number
+      t.string  :phone
       t.string  :address
       t.integer :price
 

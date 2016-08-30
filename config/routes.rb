@@ -13,11 +13,12 @@ Rails.application.routes.draw do
   put     "/users/:username"     =>      "users#update"
   delete  "/users/:username"     =>      "users#destroy"
 
-  # API ROUTES
-  get     "/menu"                =>      "menu#trigger_menu_api"
+  get     "/users/:username/favorites"     =>      "users#favorites"
 
-  post     "/omdb"               =>      "omdb#trigger_omdb_api"
-  post     "/marvel"             =>      "marvel#trigger_marvel_api"
+
+
+  # API ROUTES
+  post     "/menu"                =>      "menu#get_restaurants_api"
 
 
 end
