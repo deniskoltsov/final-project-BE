@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u1 = User.create(username: 'IvanUsername', password: 'pass123', firstname: 'Ivan FN', lastname: 'Ivam LN', phone: '3478852637', email: 'ivan@ivan.com', address: '3437 Seidner ave.', city: 'Brooklyn', state: 'NY', zipcode: '11229')
+u1 = User.create(username: 'guest', password: 'guest', firstname: 'juan', lastname: 'juanson', phone: '3478852637', email: 'juanjuanson@juan.com', address: '3437 Weidner ave.', city: 'Oceanside', state: 'NY', zipcode: '11572')
 u2 = User.create(username: 'EthanUsername', password: 'pass1234', firstname: 'Ethan FN', lastname: 'Ethan LN', phone: '3478852638', email: 'Ethan@Ethan.com', address: '3437 Feidner ave.', city: 'Brooklyn', state: 'NY', zipcode: '11230')
 u3 = User.create(username: 'LizaUsername', password: 'pass12345', firstname: 'Liza FN', lastname: 'Liza LN', phone: '3478852638', email: 'Liza@Liza.com', address: '3437 Keidner ave.', city: 'Brooklyn', state: 'NY', zipcode: '11223')
 

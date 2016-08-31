@@ -5,7 +5,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.where(username: params[:username])
+    puts "username:", params[:username]
+    puts "password:", params[:password]
+    user = User.where(username: params[:username], password: params[:password])
     render json: user
   end
 
@@ -20,7 +22,7 @@ class UsersController < ApplicationController
 
   def update
     found_user = User.where(username: params[:username])
-    updated = found_user.update(user_params)
+    updated = found_user.update(firstname: params[:firstname], lastname: params[:lastname], phone: params[:phone], email: params[:email], address: params[:address], city: params[:city], state: params[:state], zipcode: params[:zipcode])
 
     if updated
       render json: updated
@@ -30,8 +32,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.delete_all(username: params[:username])
-    render json: {'Users controller': 'USER DESTROYED'}
+    users_array = User.where(username: params[:username])
+    users_array.each do |user|
+      user.destroy
+    end
+    render json: {'user controller': 'user destroyed'}
   end
 
 end

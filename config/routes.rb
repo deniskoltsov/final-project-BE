@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # USER ROUTES
   get     "/users"               =>      "users#index"
-  get     "/users/:username"     =>      "users#show"
+  get     "/users/:username/:password"     =>      "users#show"
   post    "/users/new"           =>      "users#create"
   put     "/users/:username"     =>      "users#update"
   delete  "/users/:username"     =>      "users#destroy"
