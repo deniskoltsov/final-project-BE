@@ -15,6 +15,12 @@ Rails.application.routes.draw do
 
   get     "/users/:username/favorites"     =>      "users#favorites"
 
+  # FAVORITES ROUTES
+  get     "/favorites"               =>      "favorites#index"
+  post    "/favorites/new"           =>      "favorites#create"
+  put     "/favorites/:username"     =>      "favorites#update"
+  delete  "/favorites/:username"     =>      "favorites#destroy"
+
 
 
   # API ROUTES
