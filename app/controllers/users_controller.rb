@@ -39,4 +39,10 @@ class UsersController < ApplicationController
     render json: {'user controller': 'user destroyed'}
   end
 
+  def user_favorites
+  users_array = User.where(username: params[:username], password: params[:password])
+  user_favs = users_array[0].favorites
+  render json: user_favs
+  end
+
 end

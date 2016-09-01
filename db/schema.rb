@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(version: 20160828122952) do
 
   create_table "favorites", force: :cascade do |t|
-    t.string   "restaurantName"
+    t.string   "restaurantname"
     t.string   "street"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
     t.string   "phone"
-    t.string   "itemName"
+    t.string   "itemname"
     t.string   "price"
     t.string   "description"
     t.integer  "user_id"

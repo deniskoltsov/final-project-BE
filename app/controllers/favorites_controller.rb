@@ -9,7 +9,8 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    new_favorite = Favorite.new(restaurantName: params[:restaurantName], street: params[:street], city: params[:city], state: params[:state], zip: params[:zip], phone: params[:phone], itemName: params[:itemName], price: params[:price], description: params[:description])
+    new_favorite = Favorite.new(restaurantname: params[:restaurantname], street: params[:street], city: params[:city], state: params[:state], zip: params[:zip], phone: params[:phone], itemname: params[:itemname], price: params[:price], description: params[:description])
+    new_favorite.user = User.find(params[:user_id])
     if new_favorite.save
       render json: new_favorite
     else
@@ -27,7 +28,11 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-
+    favorites_array = Favorite.where(itemname: params[:itemname])
+    favorites_array.each do |favorite|
+      favorite.destroy
+    end
+    render json: {'favorite controller': 'favorite destroyed'}
   end
 
 end

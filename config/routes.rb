@@ -13,13 +13,14 @@ Rails.application.routes.draw do
   put     "/users/:username"     =>      "users#update"
   delete  "/users/:username"     =>      "users#destroy"
 
-  get     "/users/:username/favorites"     =>      "users#favorites"
+  get     "/users/:username/:password/favorites"     =>      "users#user_favorites"
 
   # FAVORITES ROUTES
-  get     "/favorites"               =>      "favorites#index"
-  post    "/favorites/new"           =>      "favorites#create"
-  put     "/favorites/:username"     =>      "favorites#update"
-  delete  "/favorites/:username"     =>      "favorites#destroy"
+  get     '/favorites'            =>    'favorites#index'
+  get     '/favorites/:itemname'     =>    'favorites#show'
+  post    '/favorites/new'        =>    'favorites#create'
+  put     '/favorites/:title'     =>    'favorites#update'
+  delete  '/favorites/:itemname'     =>    'favorites#destroy'
 
 
 
